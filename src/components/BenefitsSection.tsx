@@ -4,7 +4,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const BenefitItem = ({ number, title, description }) => {
+interface BenefitItemProps {
+  number: string;
+  title: string;
+  description: string;
+}
+
+const BenefitItem: React.FC<BenefitItemProps> = ({ number, title, description }) => {
   const itemRef = useRef<HTMLDivElement>(null)
   
   useEffect(() => {

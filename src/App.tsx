@@ -1,4 +1,3 @@
-
 import { useState, useEffect, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -12,6 +11,7 @@ import Contact from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
 import Loader from "./components/Loader";
+import { VapiConnect } from "./components/VapiConnect";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +36,9 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <div className="fixed bottom-4 right-4 z-50">
+          <VapiConnect />
+        </div>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
