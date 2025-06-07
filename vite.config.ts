@@ -1,12 +1,12 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/',
   server: {
-    host: "::",
+    host: true,
     port: 8080,
   },
   plugins: [
@@ -21,6 +21,9 @@ export default defineConfig(({ mode }) => ({
     include: ['three', '@react-three/fiber', '@react-three/drei']
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true,
     rollupOptions: {
       output: {
         manualChunks: {
